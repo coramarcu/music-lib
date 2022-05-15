@@ -2,11 +2,12 @@ const express = require('express');
 
 const app = express();
 
+const artistRouter = require('./routes/artist');
+
+
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.status(200);
-    res.send("Hello world");
-})
+app.use('/artist', artistRouter);
+
 
 module.exports = app;
